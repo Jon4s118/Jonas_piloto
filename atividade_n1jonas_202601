@@ -1,0 +1,75 @@
+<!doctype html>
+<head>
+    <meta charset="UTF-8">
+    <title>Jonas Gabriel Aves da Silva</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            background-color:#5C5D57;
+            padding: 40px;
+        }.container-social {
+            display: flex;
+            gap: 15px; /* Espaço entre os botões */
+        }
+
+        /* Estilo Geral de um Botão Social (usando tag <a>) */
+         botao-social {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none; /* Remove sublinhado */
+            padding: 12px 20px;
+            border-radius: 50px; /* Botão arredondado nas pontas */
+            color: white; /* Cor do texto e ícone */
+            font-weight: bold;
+            font-size: 16px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease; /* Animação suave */
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        /* Efeito de passar o mouse (Hover) */
+        .botao-social:hover {
+            transform: translateY(-3px); /* Levanta o botão */
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        /* Estilo para o ícone dentro do botão */
+        .botao-social i {
+            margin-right: 10px; /* Espaço entre ícone e texto */
+            font-size: 20px; /* Ícone um pouco maior */
+        }
+
+        /* --- Cores Específicas de cada Rede (Oficiais) --- */
+        
+        .instagram { background-color: #E1306C; }
+        .instagram:hover { background-color: #c02157; }
+
+        .facebook { background-color: #1877F2; }
+        .facebook:hover { background-color: #145dbf; }
+
+        
+    </style>
+</head>
+<body>
+   <h1 class="body">Jonas Gabriel Aves da Silva</h1>
+   <h2 class="body">Biografia</h2>
+   <h3 class="body">Eu me chamo Jonas, tenho 18 anos, nasci e morei minha vida inteira em Sorriso e tenho TEA nível 1 de suporte, algo que muitas pessoas se impressionam quando eu conto a elas.</h3>
+   <h3 class="body">Não vou mentir que escolhi o curso de ADS ao acaso na boa e velha indesição do terceiro ano do ensino médio, mas creio que posso ter  muita afinidade não só na programação mas na computação como um todo.</h3>
+
+   <img src="https://media-gru2-1.cdn.whatsapp.net/v/t61.24694-24/644275930_1864557047594067_8361275357957412496_n.jpg?ccb=11-4&oh=01_Q5Aa4AHyFkj0snC8BRdEiaEwXSeoHMgRIq_zvXz2SvGeg1lR0Q&oe=69C8598C&_nc_sid=5e03e0&_nc_cat=109" style="float: left;">
+   <div class="container-social">
+       
+        <a href="https://www.instagram.com/avesdasilvajonasgabriel?igsh=MWkyNHRqdTZjZHd5" target="_blank" class="botao-social instagram">
+            <i class="fa-brands fa-instagram"></i> Instagram
+        </a>
+
+        <a href="https://www.facebook.com/share/18WqnSdVhi/" target="_blank" class="botao-social facebook">
+            <i class="fa-brands fa-facebook-f"></i> Facebook
+        </a>
+     
+    </div>
+   
+</body>
+  
+</html>
