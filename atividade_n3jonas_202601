@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Simulador de média semestral</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+        input {
+            display: block;
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+        button {
+            padding: 8px 15px;
+            cursor: pointer;
+        }
+        #resultado {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        footer {
+            margin-top: 40px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Simulador de média semestral</h1>
+
+    <form id="formNotas">
+        <h2>Notas N1:</h2>
+        <label>Atividade N1:</label>
+        <input type="number" step="0.1" id="atividade1">
+
+        <label>Prova N1:</label>
+        <input type="number" step="0.1" id="prova1">
+
+        <h2>Notas N2:</h2>
+        <label>Prova Integrada:</label>
+        <input type="number" step="0.1" id="provaIntegrada">
+         
+        <h2>Notas N3:</h2>
+        <label>Atividade N3:</label>
+        <input type="number" step="0.1" id="atividade2">
+
+        <label>Prova N3:</label>
+        <input type="number" step="0.1" id="prova2">
+
+        <button type="button" onclick="calcularMedia()">Calcular</button>
+    </form>
+
+    <div id="resultado"></div>
+
+    <footer>
+        Desenvolvido por Jonas Gabriel Aves da Silva
+    </footer>
+
+    <script>
+        function calcularMedia() {
+            let a1 = parseFloat(document.getElementById("atividade1").value);
+            let p1 = parseFloat(document.getElementById("prova1").value);
+            let pi = parseFloat(document.getElementById("provaIntegrada").value);
+            let a2 = parseFloat(document.getElementById("atividade2").value);
+            let p2 = parseFloat(document.getElementById("prova2").value);
+
+            // Validação
+            if (
+                isNaN(a1) || isNaN(p1) || isNaN(pi) || isNaN(a2) || isNaN(p2)
+            ) {
+                document.getElementById("resultado").innerHTML = "Preencha todos os campos.";
+                return;
+            }
+
+            if (
+                a1 < 0 || a1 > 10 ||
+                p1 < 0 || p1 > 10 ||
+                pi < 0 || pi > 10 ||
+                a2 < 0 || a2 > 10 ||
+                p2 < 0 || p2 > 10
+            ) {
+                document.getElementById("resultado").innerHTML = "As notas devem estar entre 0 e 10.";
+                return;
+            }
+
+            // Cálculos
+            let n1 = (a1 + p1) / 2;
+            let n2 = pi;
+            let n3 = (a2 + p2) / 2;
+
+            let media = (n1 + n2 + n3) / 3;
+
+            let situacao = media >= 7 ? "Aprovado" : "Reprovado";
+
+            document.getElementById("resultado").innerHTML =
+            "N1: " + n1.toFixed(2) + "<br>" +
+            "N2: " + n2.toFixed(2) + "<br>" +
+            "N3: " + n3.toFixed(2) + "<br><br>" +
+            "Média Final: " + media.toFixed(2) + "<br>" +
+            "Situação: " + situacao;
+        }
+    </script>
+
+</body>
+</html>
